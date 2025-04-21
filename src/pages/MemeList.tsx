@@ -17,14 +17,14 @@ export default function MemeList() {
           <Image src={meme.image} alt={meme.title} className="w-full max-w-lg object-cover" />
           <div className="p-4">
             <h3 className="text-lg font-bold">{meme.title}</h3>
-            <p>Лайки: {meme.likes}</p>
+            <p>Likes: {meme.likes}</p>
             <a
               href={meme.image}
               target="_blank"
               rel="noopener noreferrer"
               className="text-blue-500 underline text-sm"
             >
-              Переглянути зображення
+              View picture
             </a>
           </div>
         </Card>

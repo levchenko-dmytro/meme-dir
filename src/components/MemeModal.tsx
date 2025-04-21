@@ -109,10 +109,10 @@ export default function MemeModal(props: Props) {
                   />
                   <div className="flex gap-2 mt-2">
                     <Button color="primary" type="submit">
-                      Зберегти
+                      Save
                     </Button>
                     <Button type="button" variant="flat" onPress={() => handleButtonPress(null, onClose)}>
-                      Скасувати
+                      Cancel
                     </Button>
                   </div>
                 </Form>
