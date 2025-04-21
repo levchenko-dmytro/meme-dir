@@ -62,7 +62,7 @@ export default function MemeModal(props: Props) {
         <ModalContent>
           {(onClose) => (
             <>
-              <ModalHeader className="flex flex-col gap-1">Редагувати мем</ModalHeader>
+              <ModalHeader className="flex flex-col gap-1">Edit meme</ModalHeader>
               <ModalBody>
                 <Form
                   className="p-4"
@@ -72,11 +72,11 @@ export default function MemeModal(props: Props) {
                 >
                   <Input
                     isRequired
-                    errorMessage="Назва повинна бути від 3 до 100 символів"
-                    label="Назва мему"
+                    errorMessage={errors.title}
+                    label="Meme title"
                     labelPlacement="outside"
                     name="title"
-                    placeholder="Введіть назву мему"
+                    placeholder="Meme title..."
                     type="text"
                     defaultValue={selectedMeme.title}
                     onChange={() => errors.title && setErrors({ ...errors, title: "" })}
@@ -85,20 +85,19 @@ export default function MemeModal(props: Props) {
                   <Input
                     isRequired
                     errorMessage={errors.image}
-                    label="Url адреса для картинки"
+                    label="Image Url"
                     labelPlacement="outside"
                     name="image"
-                    placeholder="Url посилання картинки"
+                    placeholder="Url..."
                     type="url"
                     defaultValue={selectedMeme.image}
                     onChange={() => errors.image && setErrors({ ...errors, image: "" })}
                   />
                   <Input
                     errorMessage={errors.likes}
-                    label="Кількість лайків"
+                    label="Likes"
                     labelPlacement="outside"
                     name="likes"
-                    placeholder="Кількість лайків"
                     type="number"
                     defaultValue={String(selectedMeme.likes)}
                     onChange={() => {

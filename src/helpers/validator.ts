@@ -1,9 +1,9 @@
 import { MemeInter } from "../type/meme";
 
 enum Errors {
-  Title = "Назва повинна бути від 3 до 100 символів",
-  Image = `Введіть адресу картинки у "https://....", картинка має мати розширення ".jpg"`,
-  Likes = "Кількість лайків від 0 до 99",
+  Title = "Minimum 3 and maximum 100 symbols",
+  Image = `Please enter correct url "https://....", allowed only format ".jpg"`,
+  Likes = "Likes quantity only from 0 to 99",
 }
 
 interface ErrorsInter {
@@ -14,7 +14,7 @@ interface ErrorsInter {
 
 export function validator(meme: MemeInter) {
   const likesRegExp = new RegExp(/^(?:[0-9]|[1-9][0-9])$/);
-  const imageRegExp = new RegExp(/^https?:\/\/[^\s/$.?#].[^\s]*$/);
+  const imageRegExp = new RegExp(/^https?:\/\/.+\.jpg$/);
 
   const hasErrors = <ErrorsInter>{};
 
