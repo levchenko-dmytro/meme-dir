@@ -4,21 +4,24 @@ import { useLocation } from "react-router-dom";
 export default function Navbar() {
   const { pathname } = useLocation()
 
+  const isTable = pathname === "/" || pathname === "/table"
+  const isList = pathname === "/list"
+
   return (
     <HeroNavbar>
       <NavbarContent>
-        <NavbarItem isActive={pathname === "/table"}>
+        <NavbarItem isActive={isTable}>
           <Link
             href="/table"
-            color={pathname === "/table" ? "primary" : "foreground"}
+            color={isTable ? "primary" : "foreground"}
           >
             Table
           </Link>
         </NavbarItem>
-        <NavbarItem isActive={pathname === "/list"}>
+        <NavbarItem isActive={isList}>
           <Link
             href="/list"
-            color={pathname === "/list" ? "primary" : "foreground"}
+            color={isList ? "primary" : "foreground"}
           >
             List
           </Link>
