@@ -27,16 +27,15 @@ export function validator(meme: MemeInter) {
         break;
 
       case "likes":
-        console.log(String(meme.likes).match(likesRegExp))
-        if (!String(meme.likes).match(likesRegExp)) {
+        if (!likesRegExp.test(String(meme.likes))) {
           hasErrors.likes = Errors.Likes;
         }
 
         break;
 
       case "image": {
-        if (!meme.image.match(imageRegExp)) {
-          hasErrors.image = Errors.Likes;
+        if (!imageRegExp.test(meme.image)) {
+          hasErrors.image = Errors.Image;
         }
 
         break;
